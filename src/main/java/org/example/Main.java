@@ -71,10 +71,10 @@ public class Main {
                                 "[2] para USUÁRIO \n " +
                                 "[3] para LIVRO \n " +
                                 "[9] para VOLTAR AO MENU PRINCIPAL");
-                    }
 
+                    } while (opcao != 9);
+                    break;
             }
-
-
-        }
+        }while(opcao != 5); //essa condição não será permanente, coloquei apenas para não quebrar teu código enquanto ainda não evoluimos para a outra parte
     }
+}
