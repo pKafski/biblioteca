@@ -26,18 +26,18 @@ public class Main {
                     locacao.getFuncionario().setNome(scanner.nextLine());
                     System.out.println("Digite seu CPF: ");
                     locacao.getFuncionario().setCpf(scanner.nextLong());
-                    System.out.println("Digite seu cargo: ");
-                    locacao.getFuncionario().setCargo(scanner.nextLine());
                     System.out.println("Digite seu salário");
                     locacao.getFuncionario().setSalario(scanner.nextDouble());
+                    System.out.println("Digite seu cargo: ");
+                    locacao.getFuncionario().setCargo(scanner.next());
                     System.out.println("Digite seu endereço \n " + "Digite sua rua: ");
-                    locacao.getFuncionario().getEndereco().setRua(scanner.nextLine());
+                    locacao.getFuncionario().getEndereco().setRua(scanner.next());
                     System.out.println("Digite o número");
                     locacao.getFuncionario().getEndereco().setNumero(scanner.nextInt());
                     System.out.println("Digite seu CEP: ");
                     locacao.getFuncionario().getEndereco().setCep(scanner.nextInt());
                     System.out.println("Digite seu bairro: ");
-                    locacao.getFuncionario().getEndereco().setBairro(scanner.nextLine());
+                    locacao.getFuncionario().getEndereco().setBairro(scanner.next());
                     break;
 
                 case 2:
@@ -71,10 +71,71 @@ public class Main {
                                 "[2] para USUÁRIO \n " +
                                 "[3] para LIVRO \n " +
                                 "[9] para VOLTAR AO MENU PRINCIPAL");
-
+                        opcao = scanner.nextByte();
+                        switch (opcao) {
+                            case 1:
+                                System.out.println(locacao.getFuncionario().toString());
+                                break;
+                            case 2:
+                                System.out.println(locacao.getUsuario().toString());
+                                break;
+                            case 3:
+                                System.out.println(locacao.getLivro().toString());
+                                break;
+                            case 9:
+                                break;
+                            default:
+                                System.out.println("Opção inválida \n Digite novamente");
+                        }
                     } while (opcao != 9);
                     break;
+                case 5:
+                    do {
+                        System.out.println("Escolha a opção abaixo \n " +
+                                "[1] Locar livro \n" +
+                                "[2] Devolver livro \n" +
+                                "[3] Mostrar dados do livro locado \n" +
+                                "[4] Mostrar dados do livro devolvido \n" +
+                                "[5] Sair da locação \n" +
+                                "Digite aqui a opção: \n");
+                        opcao = scanner.nextByte();
+                        switch (opcao) {
+                            case 1:
+                                System.out.println("Insira os dados do livro: \n" + "Titulo");
+                                locacao2.getLivro().setTitulo(scanner.nextLine());
+                                System.out.println("Genero");
+                                locacao2.getLivro().setGenero(scanner.nextLine());
+                                System.out.println("Autor");
+                                locacao2.getLivro().setAutor(scanner.nextLine());
+                                break;
+                            case 2:
+                                System.out.println("Insira os dados do livro devolvido: \n" + "Titulo");
+                                locacao3.getLivro().setTitulo(scanner.nextLine());
+                                System.out.println("Genero");
+                                locacao3.getLivro().setGenero(scanner.nextLine());
+                                System.out.println("Autor");
+                                locacao3.getLivro().setAutor(scanner.nextLine());
+                                break;
+                            case 3:
+                                System.out.println("Dados do livro locado: \n" + locacao2.getLivro().toString());
+                                break;
+                            case 4:
+                                System.out.println("Dados do livro devolvido: \n " + locacao3.getLivro().toString());
+                                break;
+                            case 5:
+                                break;
+                            default:
+                                System.out.println("Opção inválida \n Digite novamente");
+                        }
+
+                    } while (opcao != 5);
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Opção inválida \n Digite novamente");
+
             }
-        }while(opcao != 5); //essa condição não será permanente, coloquei apenas para não quebrar teu código enquanto ainda não evoluimos para a outra parte
+        } while (opcao != 0);
     }
 }

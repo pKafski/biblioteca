@@ -7,6 +7,7 @@ public class Funcionario {
     private double salario;
     private Endereco endereco;
 
+
     public Funcionario() {
         this.endereco = new Endereco();
     }
