@@ -94,3 +94,9 @@ public class Locacao {
                 + "\n funcionario: " + funcionario+ ", usuario: " +  usuario + ", livro: " + livro + ", data de locação: "+ dataLocacao +", data de devolução: " + dataLocacao;
     }
 }
+
+/*
+1-Desenvolver uma funcionalidade que faça a o calculo do valor da locacao
+2-Desenvolver uma funcionalidade que faça a locacao do livro(usar a variavel status como true)
+3-Desenvolver uma funcionalidade que faça a devolução do livro(usar a variavel status como false)
+ */
