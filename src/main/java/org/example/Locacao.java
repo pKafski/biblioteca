@@ -1,5 +1,9 @@
 package org.example;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Locacao {
     private double valorLocacao;
     private double valorMulta;
@@ -10,11 +14,12 @@ public class Locacao {
     private Data dataDevolucao;
     private Livro livroLocado;
 
+
     public Locacao() {
         this.valorLocacao = valorLocacao;
         this.valorMulta = valorMulta;
         this.funcionario = new Funcionario();
-        this.usuario = new Usuario() ;
+        this.usuario = new Usuario();
         this.livro = new Livro();
         this.dataLocacao = new Data();
         this.dataDevolucao = new Data();
@@ -86,12 +91,30 @@ public class Locacao {
         this.livroLocado = livroLocado;
     }
 
+    public double calcularLocacao() throws ParseException {
+        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/mm/yyyy");
+        Date dLocacao = dataFormatada.parse(this.dataLocacao.toString());
+        Date dDevolucao = dataFormatada.parse(this.dataLocacao.toString());
+        long dias = (dDevolucao.getTime() - dLocacao.getTime()) / 604800;
+        if (dias <= 7) {
+            return this.valorLocacao;
+        } else {
+            return (dias - 7) * this.valorMulta + this.valorLocacao;
+        }
+        public void locarLivro () {
+            this.livro.status = true;
+
+        }
+
+
+    }
+
     @Override
     public String toString() {
         return "\n"
                 + "valorLocacao: " + valorLocacao + "\n"
                 + "valorMulta: " + valorMulta + "\n"
-                + "\n funcionario: " + funcionario+ ", usuario: " +  usuario + ", livro: " + livro + ", data de locação: "+ dataLocacao +", data de devolução: " + dataLocacao;
+                + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
     }
 }
 
