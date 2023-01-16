@@ -1,5 +1,4 @@
 package org.example;
-
 public class Funcionario {
     private String nome;
     private long cpf;

@@ -3,12 +3,23 @@ package org.example;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
+        /* Criando um scanner para ler os dados de entrada
+        Instanciando uma nova locacao (locacao 1 2 e 3)
+         */
         Scanner scanner = new Scanner(System.in);
         Locacao locacao = new Locacao();
         Locacao locacao2 = new Locacao();
         Locacao locacao3 = new Locacao();
+       /*
+       Criando uma variavel do tipo byte: opcao
+        */
         byte opcao;
+        /*
+        Criando uma estrutura que irá executar diversos comandos quando a conclusão estiver diferente de 0
+        utilizando do while
+         */
         do {
             System.out.println("Escolha uma opção abaixo: \n " +
                     "[1] - Cadastrar funcionario \n " +
@@ -20,6 +31,9 @@ public class Main {
                     "Digite aqui a opção desejada");
             opcao = scanner.nextByte();
             scanner.nextLine();
+            /*
+            Criando switch cases para as diferentes opções desejadas no programa
+            Aqui foram utilizados 6 cases sendo que o 5º case tem 5 switch cases dentro dele sendo o 6º case o N0 que dá um break no programa           */
             switch (opcao) {
                 case 1:
                     System.out.println("Cadastro do funcionario \n " + "Digite seu nome: ");
@@ -31,7 +45,7 @@ public class Main {
                     System.out.println("Digite seu cargo: ");
                     locacao.getFuncionario().setCargo(scanner.next());
                     System.out.println("Digite seu endereço \n " + "Digite sua rua: ");
-                    locacao.getFuncionario().getEndereco().setRua(scanner.next());
+                    locacao.getFuncionario().getEndereco().setRua(scanner.nextLine());
                     System.out.println("Digite o número");
                     locacao.getFuncionario().getEndereco().setNumero(scanner.nextInt());
                     System.out.println("Digite seu CEP: ");
@@ -47,13 +61,13 @@ public class Main {
                     locacao.getUsuario().setCodigo(scanner.nextInt());
                     System.out.println("Digite seu CPF: ");
                     locacao.getUsuario().setCpf(scanner.nextInt());
-                    System.out.println("Digite seu endereço \n " + "Digite sua rua: ");
+                    System.out.println("Digite sua rua: ");
                     locacao.getUsuario().getEndereco().setRua(scanner.nextLine());
                     System.out.println("Digite o número");
                     locacao.getUsuario().getEndereco().setNumero(scanner.nextInt());
                     System.out.println("Digite seu CEP: ");
                     locacao.getUsuario().getEndereco().setCep(scanner.nextInt());
-                    System.out.println("Digite seu bairro: ");
+                    System.out.println("Digite seu bairro: \n ");
                     locacao.getUsuario().getEndereco().setBairro(scanner.nextLine());
                     break;
                 case 3:
