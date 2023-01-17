@@ -44,14 +44,17 @@ public class Main {
                     locacao.getFuncionario().setSalario(scanner.nextDouble());
                     System.out.println("Digite seu cargo: ");
                     locacao.getFuncionario().setCargo(scanner.next());
-                    System.out.println("Digite seu endereço \n " + "Digite sua rua: ");
+                    scanner.nextLine();
+                    System.out.print("Endereço------\n"
+                            + "Rua: ");
                     locacao.getFuncionario().getEndereco().setRua(scanner.nextLine());
                     System.out.println("Digite o número");
                     locacao.getFuncionario().getEndereco().setNumero(scanner.nextInt());
                     System.out.println("Digite seu CEP: ");
                     locacao.getFuncionario().getEndereco().setCep(scanner.nextInt());
+                    scanner.nextLine();
                     System.out.println("Digite seu bairro: ");
-                    locacao.getFuncionario().getEndereco().setBairro(scanner.next());
+                    locacao.getFuncionario().getEndereco().setBairro(scanner.nextLine());
                     break;
 
                 case 2:
@@ -61,7 +64,9 @@ public class Main {
                     locacao.getUsuario().setCodigo(scanner.nextInt());
                     System.out.println("Digite seu CPF: ");
                     locacao.getUsuario().setCpf(scanner.nextInt());
-                    System.out.println("Digite sua rua: ");
+                    scanner.nextLine();
+                    System.out.print("\nEndereço\n"
+                            + "Rua: ");
                     locacao.getUsuario().getEndereco().setRua(scanner.nextLine());
                     System.out.println("Digite o número");
                     locacao.getUsuario().getEndereco().setNumero(scanner.nextInt());

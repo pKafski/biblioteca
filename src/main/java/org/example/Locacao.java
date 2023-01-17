@@ -101,20 +101,15 @@ public class Locacao {
         } else {
             return (dias - 7) * this.valorMulta + this.valorLocacao;
         }
-        public void locarLivro () {
-            this.livro.status = true;
+    }
 
-        }
-
-
+    public void locarLivro() {
+        this.livro.status = true;
     }
 
     @Override
     public String toString() {
-        return "\n"
-                + "valorLocacao: " + valorLocacao + "\n"
-                + "valorMulta: " + valorMulta + "\n"
-                + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
+        return "\n" + "valorLocacao: " + valorLocacao + "\n" + "valorMulta: " + valorMulta + "\n" + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
     }
 }
 
