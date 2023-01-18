@@ -120,26 +120,56 @@ public class Main {
                         opcao = scanner.nextByte();
                         switch (opcao) {
                             case 1:
+                                scanner.nextLine();
                                 System.out.println("Insira os dados do livro: \n" + "Titulo");
-                                locacao2.getLivro().setTitulo(scanner.nextLine());
+                                locacao.getLivro().setTitulo(scanner.nextLine());
                                 System.out.println("Genero");
-                                locacao2.getLivro().setGenero(scanner.nextLine());
+                                locacao.getLivro().setGenero(scanner.nextLine());
                                 System.out.println("Autor");
-                                locacao2.getLivro().setAutor(scanner.nextLine());
+                                locacao.getLivro().setAutor(scanner.nextLine());
+                                System.out.println("Dia da locação:");
+                                locacao.getDataLocacao().setDia(scanner.nextInt());
+                                System.out.println("Mês:");
+                                locacao.getDataLocacao().setMes(scanner.nextInt());
+                                System.out.println("Ano:");
+                                locacao.getDataLocacao().setAno(scanner.nextInt());
+                                System.out.println("Valor da locação:");
+                                locacao.setValorLocacao(scanner.nextDouble());
+
                                 break;
                             case 2:
+                                scanner.nextLine();
                                 System.out.println("Insira os dados do livro devolvido: \n" + "Titulo");
-                                locacao3.getLivro().setTitulo(scanner.nextLine());
+                                locacao.getLivro().setTitulo(scanner.nextLine());
                                 System.out.println("Genero");
-                                locacao3.getLivro().setGenero(scanner.nextLine());
+                                locacao.getLivro().setGenero(scanner.nextLine());
                                 System.out.println("Autor");
-                                locacao3.getLivro().setAutor(scanner.nextLine());
+                                locacao.getLivro().setAutor(scanner.nextLine());
+                                System.out.println("Dia da locação:");
+                                locacao.getDataLocacao().setDia(scanner.nextInt());
+                                System.out.println("Mês da locação:");
+                                locacao.getDataLocacao().setMes(scanner.nextInt());
+                                System.out.println("Ano da locação:");
+                                locacao.getDataLocacao().setAno(scanner.nextInt());
+                                System.out.println("Dia da devolução:");
+                                locacao.getDataDevolucao().setDia(scanner.nextInt());
+                                System.out.println("Mês da devolução:");
+                                locacao.getDataDevolucao().setMes(scanner.nextInt());
+                                System.out.println("Ano da devolução:");
+                                locacao.getDataDevolucao().setAno(scanner.nextInt());
+
+
                                 break;
                             case 3:
-                                System.out.println("Dados do livro locado: \n" + locacao2.getLivro().toString());
+                                System.out.println("Dados do livro locado: \n" + locacao.getLivro().toString() + locacao.getDataLocacao());
+
+
                                 break;
                             case 4:
-                                System.out.println("Dados do livro devolvido: \n " + locacao3.getLivro().toString());
+                                System.out.println("Dados do livro devolvido: \n " + locacao.getLivro().toString() +
+                                        "Data de locação:" + locacao.getDataLocacao() +
+                                        "\n Data devolução:" + locacao.getDataDevolucao()
+                                        + "\n multa:" + locacao.getValorMulta());
                                 break;
                             case 5:
                                 break;

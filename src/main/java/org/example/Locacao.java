@@ -103,9 +103,6 @@ public class Locacao {
         }
     }
 
-    public void locarLivro() {
-        this.livro.status = true;
-    }
 
     @Override
     public String toString() {

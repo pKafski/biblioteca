@@ -30,21 +30,14 @@ public class Livro {
         this.autor = autor;
     }
 
-    public boolean isStatus() {
-        return status;
-    }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
 
     @Override
     public String toString() {
         return "\n"
                 + "titulo: " + titulo + "\n"
                 + "genero: " + genero + "\n"
-                + "autor=: " + autor + "\n"
-                + "status: " + status + "\n";
+                + "autor: " + autor + "\n";
     }
 }
 
