@@ -30,14 +30,20 @@ public class Livro {
         this.autor = autor;
     }
 
-
+    public String mostrarStatus() {
+        if (this.status) {
+            return "Locado";
+        }
+        return "Disponível";
+    }
 
     @Override
     public String toString() {
         return "\n"
                 + "titulo: " + titulo + "\n"
                 + "genero: " + genero + "\n"
-                + "autor: " + autor + "\n";
+                + "autor: " + autor + "\n"
+                + "Situação do livro: " + this.mostrarStatus() + "\n";
     }
 }
 

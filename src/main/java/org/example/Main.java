@@ -123,11 +123,11 @@ public class Main {
                             case 1:
                                 scanner.nextLine();
                                 System.out.println("Insira os dados do livro: \n" + "Titulo");
-                                locacao.getLivro().setTitulo(scanner.nextLine());
+                                locacao2.getLivro().setTitulo(scanner.nextLine());
                                 System.out.println("Genero");
-                                locacao.getLivro().setGenero(scanner.nextLine());
+                                locacao2.getLivro().setGenero(scanner.nextLine());
                                 System.out.println("Autor");
-                                locacao.getLivro().setAutor(scanner.nextLine());
+                                locacao2.getLivro().setAutor(scanner.nextLine());
                                 System.out.println("Dia da locação:");
                                 locacao.getDataLocacao().setDia(scanner.nextInt());
                                 System.out.println("Mês:");
@@ -136,35 +136,36 @@ public class Main {
                                 locacao.getDataLocacao().setAno(scanner.nextInt());
                                 System.out.println("Valor da locação:");
                                 locacao.setValorLocacao(scanner.nextDouble());
+                                locacao.locarLivro();
 
                                 break;
                             case 2:
                                 scanner.nextLine();
                                 System.out.println("Insira os dados do livro devolvido: \n" + "Titulo");
-                                locacao.getLivro().setTitulo(scanner.nextLine());
+                                locacao3.getLivro().setTitulo(scanner.nextLine());
                                 System.out.println("Genero");
-                                locacao.getLivro().setGenero(scanner.nextLine());
+                                locacao3.getLivro().setGenero(scanner.nextLine());
                                 System.out.println("Autor");
-                                locacao.getLivro().setAutor(scanner.nextLine());
+                                locacao3.getLivro().setAutor(scanner.nextLine());
                                 System.out.println("Dia da locação:");
-                                locacao.getDataLocacao().setDia(scanner.nextInt());
+                                locacao3.getDataLocacao().setDia(scanner.nextInt());
                                 System.out.println("Mês da locação:");
-                                locacao.getDataLocacao().setMes(scanner.nextInt());
+                                locacao3.getDataLocacao().setMes(scanner.nextInt());
                                 System.out.println("Ano da locação:");
-                                locacao.getDataLocacao().setAno(scanner.nextInt());
+                                locacao3.getDataLocacao().setAno(scanner.nextInt());
                                 System.out.println("Dia da devolução:");
-                                locacao.getDataDevolucao().setDia(scanner.nextInt());
+                                locacao3.getDataDevolucao().setDia(scanner.nextInt());
                                 System.out.println("Mês da devolução:");
-                                locacao.getDataDevolucao().setMes(scanner.nextInt());
+                                locacao3.getDataDevolucao().setMes(scanner.nextInt());
                                 System.out.println("Ano da devolução:");
-                                locacao.getDataDevolucao().setAno(scanner.nextInt());
+                                locacao3.getDataDevolucao().setAno(scanner.nextInt());
                                 System.out.println("Qual o valor da multa a pagar?");
                                 System.out.println("::::::::Tabela de valores da multa:::::");
                                 System.out.println("1 á 7 dias de atraso, valor da multa é o total de 10 R$ fixo");
                                 System.out.println("7 dias PRA CIMA de atraso, valor da multa é o total de 20 R$ fixo");
                                 System.out.println("Dependendo do tempo de atrasado o cliente poderá perder sua carteirinha de locação do nosso estabelecimento");
-                                locacao.setValorMulta(scanner.nextDouble());
-
+                                locacao3.setValorMulta(scanner.nextDouble());
+                                locacao.devolverLivro();
                                 break;
                             case 3:
                                 System.out.println("Dados do livro locado: \n" + locacao.getLivro().toString() + locacao.getDataLocacao());

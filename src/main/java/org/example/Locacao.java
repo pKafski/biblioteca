@@ -87,6 +87,14 @@ public class Locacao {
         this.livroLocado = livroLocado;
     }
 
+    public void locarLivro() {
+        this.livro.status = true;
+    }
+
+    public void devolverLivro() {
+        this.livro.status = false;
+    }
+
     @Override
     public String toString() {
         return "\n" + "valorLocacao: " + valorLocacao + "\n" + "valorMulta: " + valorLocacao * valorMulta + "\n" + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
