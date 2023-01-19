@@ -1,10 +1,11 @@
 package org.example;
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         /* Criando um scanner para ler os dados de entrada
         Instanciando uma nova locacao (locacao 1 2 e 3)
          */
@@ -157,12 +158,16 @@ public class Main {
                                 locacao.getDataDevolucao().setMes(scanner.nextInt());
                                 System.out.println("Ano da devolução:");
                                 locacao.getDataDevolucao().setAno(scanner.nextInt());
-
+                                System.out.println("Qual o valor da multa a pagar?");
+                                System.out.println("::::::::Tabela de valores da multa:::::");
+                                System.out.println("1 á 7 dias de atraso, valor da multa é o total de 10 R$ fixo");
+                                System.out.println("7 dias PRA CIMA de atraso, valor da multa é o total de 20 R$ fixo");
+                                System.out.println("Dependendo do tempo de atrasado o cliente poderá perder sua carteirinha de locação do nosso estabelecimento");
+                                locacao.setValorMulta(scanner.nextDouble());
 
                                 break;
                             case 3:
                                 System.out.println("Dados do livro locado: \n" + locacao.getLivro().toString() + locacao.getDataLocacao());
-
 
                                 break;
                             case 4:

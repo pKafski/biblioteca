@@ -1,9 +1,5 @@
 package org.example;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Locacao {
     private double valorLocacao;
     private double valorMulta;
@@ -91,27 +87,8 @@ public class Locacao {
         this.livroLocado = livroLocado;
     }
 
-    public double calcularLocacao() throws ParseException {
-        SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/mm/yyyy");
-        Date dLocacao = dataFormatada.parse(this.dataLocacao.toString());
-        Date dDevolucao = dataFormatada.parse(this.dataLocacao.toString());
-        long dias = (dDevolucao.getTime() - dLocacao.getTime()) / 604800;
-        if (dias <= 7) {
-            return this.valorLocacao;
-        } else {
-            return (dias - 7) * this.valorMulta + this.valorLocacao;
-        }
-    }
-
-
     @Override
     public String toString() {
-        return "\n" + "valorLocacao: " + valorLocacao + "\n" + "valorMulta: " + valorMulta + "\n" + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
+        return "\n" + "valorLocacao: " + valorLocacao + "\n" + "valorMulta: " + valorLocacao * valorMulta + "\n" + "\n funcionario: " + funcionario + ", usuario: " + usuario + ", livro: " + livro + ", data de locação: " + dataLocacao + ", data de devolução: " + dataLocacao;
     }
 }
-
-/*
-1-Desenvolver uma funcionalidade que faça a o calculo do valor da locacao
-2-Desenvolver uma funcionalidade que faça a locacao do livro(usar a variavel status como true)
-3-Desenvolver uma funcionalidade que faça a devolução do livro(usar a variavel status como false)
- */
